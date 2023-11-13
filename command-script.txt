@@ -1,0 +1,43 @@
+#load koala.ppm and call it 'koala'
+load res/owl.ppm owl
+
+#brighten koala by adding 10
+brighten 10 owl owl-brighter
+
+#save brighter image
+save test/images/owl-brighter.ppm owl-brighter
+
+#flip koala vertically
+vertical-flip owl owl-vertical
+
+#save brighter image
+save test/images/owl-vertical.ppm owl-vertical
+
+#flip the vertically flipped owl horizontally
+horizontal-flip owl-vertical owl-vertical-horizontal
+
+#save brighter image
+save test/images/owl-vertical-horizontal.ppm owl-vertical-horizontal
+
+#create a greyscale using only the value component, as an image owl-greyscale
+greyscale value-component owl owl-greyscale
+
+#save brighter image
+save test/images/owl-greyscale-value.ppm owl-greyscale
+
+#give the owl a red tint
+rgb-split owl owl-red owl-green owl-blue
+
+#save brighter image
+save test/images/owl-red.ppm owl-red
+
+#save brighter image
+save test/images/owl-green.ppm owl-green
+
+#save brighter image
+save test/images/owl-blue.ppm owl-blue
+
+#combine them back, but by using the brightened red we get a red tint
+rgb-combine owl-red-tint owl-red owl-green owl-blue
+
+save test/images/owl-red-tint.ppm owl-red-tint
